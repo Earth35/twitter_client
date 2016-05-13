@@ -44,7 +44,7 @@ class MicroBlogger
     puts message
     screen_names = @client.followers.map { |follower| @client.user(follower).screen_name }
     if screen_names.include?(target)
-      message = "d @#{target} #{message}"
+      message = "@#{target} #{message}"
       tweet(message)
     else
       puts "You can't send DMs to someone who isn't your follower!"
